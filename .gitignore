@@ -1,0 +1,34 @@
+build/
+dist/
+env/
+MANIFEST
+doc/build/*
+logs/*
+*.egg-info/*
+*.db
+*.pyc
+*.pyo
+*.txt
+*~
+*.rpm
+*.spec
+.*.sw*
+.pid-*
+
+# IntelliJ idea
+.idea
+*.iml
+
+# Eclipse/PyDev
+.settings
+.project
+.pydevproject
+
+# Test/Coverage
+.cache
+.pytest_cache
+.coverage
+coverage_html_report/
+
+# macOS
+*.DS_Store
