@@ -4,7 +4,11 @@ from sphinx.roles import RFC
 class RFCWithSection(RFC):
     """RFC role that automatically titles section refs sanely."""
     def run(self):
-        if not self.has_explicit_title and '#' in self.target:
+        num = section = None
+
+        if self.has_explicit_title and '#' in self.title:
+            num, section = self.title.split('#', 1)
+        elif not self has_explicit_title and '#' in self.target:
             num, section = self.target.split('#', 1)
             try:
                 section = float(section.replace('section-', ''))
@@ -13,6 +17,7 @@ class RFCWithSection(RFC):
             else:
                 section = str(section)
 
+        if num and section:
             self.title = 'RFC {} § {}'.format(num, section)
             self.has_explicit_title = True
 
